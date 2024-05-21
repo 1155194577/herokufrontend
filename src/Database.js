@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import Error from './error';
+// this component shows all data fetched from heroku server via HTTPS GET method
 function Database() {
     // Fetcher function
     const fetchapi = async() => {
@@ -18,9 +19,12 @@ function Database() {
     //show database if everything work smoothly
     console.log(data)
   return (
-    <div>
-     testing
-    </div>
+    <ul>
+    {data.map( 
+        (item) =>
+        (<li>{item.user_id} || username || {item.user_name} || password :{item.user_password}</li>)
+    )}
+    </ul>
   )
 }
 
