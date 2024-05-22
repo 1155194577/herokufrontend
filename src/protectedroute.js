@@ -1,11 +1,18 @@
 import React from 'react'
+import { UserContext } from './App'
+import { useContext } from 'react';
 
 function Protected() {
-  return (
-    <div>
+  // const [IsLoggedin,SetIsLoggedin] = useContext(UserContext); 
+      //  if(!IsLoggedin) {
+       //     return (<div>No permission!!</div>)
+        //}
+        console.log(useContext(UserContext))
+        
+   return ( <div>
       ProtectedRoute
-    </div>
-  )
+    </div>)
+  
 }
 
 export default  Protected
