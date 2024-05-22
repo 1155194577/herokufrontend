@@ -20,20 +20,21 @@ const post = (url,mutation,data) => {
 
  function Loginpage() {
         const url = "https://backendapp-431f65cc5d32.herokuapp.com/post"   
+       // const url = "http://localhost:3000/post" // for development
         const mutation = useMutation((newPost)=>axios.post(url,newPost))
         const [Username,SetUsername] = useState(null)
         const [Password,SetPassword] = useState(null) 
 
         useEffect(
             ()=>{
-                console.log(Username,Password)
+                console.log({"username":Username,"password":Password})
             },[Username,Password]
         )
 
           return( <div> 
             <TextField variant="outlined" label="Username" type="email" onChange={(e)=>{SetUsername(e.target.value)}}/>
             <TextField  variant="outlined" label="Password" type="email" onChange={(e)=>{SetPassword(e.target.value)}} />
-            <Button variant="contained" onClick={()=>{post(url,mutation,{Username:Password})}}>test</Button>
+            <Button variant="contained" onClick={()=>{post(url,mutation,{"username":Username,"password":Password})}}>test</Button>
         </div>
     )
         }

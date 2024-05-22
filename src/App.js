@@ -4,16 +4,14 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import Loginpage from './Loginpage'
 
 //init the client 
-const queryClent = new QueryClient()
 
 
 function App() {
   return (
-    <QueryClientProvider client={queryClent}>
+    <div> 
     <Loginpage/>
     <Database/>
-
-    </QueryClientProvider>
+    </div>
   )
 }
 
