@@ -4,6 +4,7 @@ import Error from './error';
 import Navbar from './navbar';
 import { Box, boxClasses } from '@mui/material';
 import  "./database.css"
+import DataTable from './DataTable';
 // this component shows all data fetched from heroku server via HTTPS GET method
 function Database() {
     // Fetcher function
@@ -21,17 +22,18 @@ function Database() {
 
     //show database if everything work smoothly
     console.log(data)
+    /* <ul>
+        {data.map( 
+        (item) =>
+        (<li>{item.user_id} || username || {item.user_name} || password :{item.user_password}</li>)
+     )}
+      </ul>*/
   return (
         
         <Box className="container">
             <Navbar></Navbar>
             <Box className='table'>
-             <ul>
-        {data.map( 
-        (item) =>
-        (<li>{item.user_id} || username || {item.user_name} || password :{item.user_password}</li>)
-     )}
-      </ul>
+            <DataTable DataArr={data}/>
         </Box>
         </Box>
         
