@@ -9,7 +9,7 @@ import DataTable from './DataTable';
 function Database() {
     // Fetcher function
     const fetchapi = async() => {
-        const api = "https://backendapp-431f65cc5d32.herokuapp.com/api"
+        const api = "https://backendapp-431f65cc5d32.herokuapp.com/GET"
         const res = await fetch(api)
         return res.json()
     };
