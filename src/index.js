@@ -6,7 +6,6 @@ import Database from './Database';
 import Protected from './protectedroute';
 import { QueryClient,QueryClientProvider } from 'react-query';
 import Error from './error';
-import { Navigate} from 'react-router-dom';
 
 const router = createBrowserRouter([{
   path : '/',

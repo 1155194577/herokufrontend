@@ -2,7 +2,7 @@ import React from 'react'
 import { useQuery } from 'react-query'
 import Error from './error';
 import Navbar from './navbar';
-import { Box, boxClasses } from '@mui/material';
+import { Box } from '@mui/material';
 import  "./database.css"
 import DataTable from './DataTable';
 // this component shows all data fetched from heroku server via HTTPS GET method

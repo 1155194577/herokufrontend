@@ -1,7 +1,6 @@
 import React, { createContext, useState } from 'react'
 import Loginpage from './Loginpage'
 import { Navigate } from 'react-router-dom'
-import Protected from './protectedroute'
 //init the client 
 
 export const UserContext = createContext()
