@@ -6,6 +6,7 @@ import Database from './Database';
 import Protected from './protectedroute';
 import { QueryClient,QueryClientProvider } from 'react-query';
 import Error from './error';
+import Register from './Register';
 
 const router = createBrowserRouter([{
   path : '/',
@@ -23,6 +24,13 @@ const router = createBrowserRouter([{
         <Protected/>
 ), 
   errorElement : <div>Protected</div>
+ },
+ {
+  path : '/register', 
+  element : (  
+        <Register/>
+), 
+  errorElement : <Error/>
  },
  { 
    path : '*',
