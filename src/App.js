@@ -1,7 +1,5 @@
 import React, { createContext, useState } from 'react'
 import Loginpage from './Loginpage'
-import Protected from './protectedroute'
-import { imageListClasses } from '@mui/material'
 import { Navigate } from 'react-router-dom'
 //init the client 
 

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useMutation } from 'react-query'
 import { Button, TextField } from '@mui/material'
 import { UserContext } from './App'
-const post = (url,mutation,data,setisloggedin) => {
+const post = (url,mutation,data,setisloggedin,IsLoggedin) => {
     console.log(url)
     mutation.mutate(data)
     console.log(mutation)
@@ -11,7 +11,7 @@ const post = (url,mutation,data,setisloggedin) => {
     console.log("Successfully posted data to server: ",mutation.variables)
     console.log("Response from the server: ",mutation.data.data)
         if(mutation.data.data["IsCorrectCredential"]){
-                    console.log("correct pw!")
+                    console.log("correct pw!",IsLoggedin)
                     setisloggedin(true)}
                     else {
                         console.log("wrong pw!")
@@ -36,7 +36,6 @@ const post = (url,mutation,data,setisloggedin) => {
 
         useEffect(
             ()=>{
-                console.log(IsLoggedin)
                 console.log({"username":Username,"password":Password})
             },[Username,Password]
         )
@@ -44,7 +43,7 @@ const post = (url,mutation,data,setisloggedin) => {
           return( <div> 
             <TextField variant="outlined" label="Username" type="email" onChange={(e)=>{SetUsername(e.target.value)}}/>
             <TextField  variant="outlined" label="Password" type="email" onChange={(e)=>{SetPassword(e.target.value)}} />
-            <Button variant="contained" onClick={()=>{post(url,mutation,{"username":Username,"password":Password},SetIsLoggedin)}}>test</Button>
+            <Button variant="contained" onClick={()=>{post(url,mutation,{"username":Username,"password":Password},SetIsLoggedin,IsLoggedin)}}>test</Button>
         </div>
     )
         }
