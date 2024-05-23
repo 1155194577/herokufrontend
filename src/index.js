@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { RouterProvider,createBrowserRouter } from 'react-router-dom';
@@ -6,6 +6,8 @@ import Database from './Database';
 import Protected from './protectedroute';
 import { QueryClient,QueryClientProvider } from 'react-query';
 import Error from './error';
+import { Navigate} from 'react-router-dom';
+
 const router = createBrowserRouter([{
   path : '/',
   element : <App/>, 
@@ -18,7 +20,9 @@ const router = createBrowserRouter([{
  },
  {
   path : '/protected', 
-  element : <Protected/>, 
+  element : (  
+        <Protected/>
+), 
   errorElement : <div>Protected</div>
  },
  { 
@@ -28,6 +32,7 @@ const router = createBrowserRouter([{
 ]);
 
 const queryClent = new QueryClient()
+export const LoginState =  createContext()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

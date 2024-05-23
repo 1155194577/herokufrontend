@@ -1,8 +1,12 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { useMutation } from 'react-query'
-import { Button, TextField } from '@mui/material'
+import { Button, TextField ,Box, AppBar, Toolbar, Typography, createTheme} from '@mui/material'
 import { UserContext } from './App'
+import "./Loginpage.css"
+import { red } from '@mui/material/colors'
+import Navbar from './navbar'
 const post = (url,mutation,data,setisloggedin,IsLoggedin) => {
     console.log(url)
     mutation.mutate(data)
@@ -40,12 +44,15 @@ const post = (url,mutation,data,setisloggedin,IsLoggedin) => {
             },[Username,Password]
         )
 
-          return( <div> 
+          return(<div>
+                <Navbar></Navbar>
+            
+            <Box className='loginbox'> 
             <TextField variant="outlined" label="Username" type="email" onChange={(e)=>{SetUsername(e.target.value)}}/>
             <TextField  variant="outlined" label="Password" type="email" onChange={(e)=>{SetPassword(e.target.value)}} />
-            <Button variant="contained" onClick={()=>{post(url,mutation,{"username":Username,"password":Password},SetIsLoggedin,IsLoggedin)}}>test</Button>
-        </div>
-    )
+            <Button variant="contained" onClick={()=>{post(url,mutation,{"username":Username,"password":Password},SetIsLoggedin,IsLoggedin)}}>Login</Button>
+        </Box>
+        </div> ) 
         }
     
 
