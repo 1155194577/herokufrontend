@@ -30,7 +30,7 @@ const register = (url,mutation,data) => {
 }
  function Register() {
          const url = "https://backendapp-431f65cc5d32.herokuapp.com/register"   
-       // const url = "http://localhost:3000/register" // for development
+      //  const url = "http://localhost:3000/register" // for development
         const mutation = useMutation((newPost)=>axios.post(url,newPost))
         const [Username,SetUsername] = useState(null)
         const [Password,SetPassword] = useState(null)

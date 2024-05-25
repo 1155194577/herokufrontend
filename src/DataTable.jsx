@@ -34,7 +34,7 @@ export default function DataTable(props) {
               </TableCell>
               <TableCell align="right">{row.user_name}</TableCell>
               <TableCell align="right">{row.user_password}</TableCell>
-              <TableCell align="right">{row.user_hashpassword || "Not found"}</TableCell>
+              <TableCell align="right">{row.hashed || "Not found"}</TableCell>
             </TableRow>
           ))}
         </TableBody>
